@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
+import Script from 'next/script';
 import WalletConnect from '../components/WalletConnect';
 import ProposalForm from '../components/ProposalForm';
 import ProposalAnalysis from '../components/ProposalAnalysis';
@@ -82,8 +83,10 @@ export default function Home() {
         <meta name="description" content="Make informed DAO governance decisions with AI-powered proposal analysis" />
         <link rel="icon" href="/favicon.ico" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono&display=swap" rel="stylesheet" />
-        {/* Add Buffer polyfill for browsers */}
-        <script src="https://cdn.jsdelivr.net/npm/buffer@6.0.3/index.min.js"></script>
+        <Script 
+          src="https://cdn.jsdelivr.net/npm/buffer@6.0.3/index.min.js" 
+          strategy="afterInteractive"
+        />
       </Head>
 
       <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-r from-indigo-600 to-purple-600 transform -skew-y-3 origin-top-left -z-10"></div>
